@@ -90,6 +90,8 @@
     <string name="setting_max_fps_placeholder">FPS</string>
     <string name="setting_overscanned">Overscanned</string>
     <string name="setting_overscanned_desc">Add pixel boundary for full-screen overscan displays</string>
+    <string name="setting_fill_screen">Fill screen (zoom)</string>
+    <string name="setting_fill_screen_desc">Scale video to fill the screen, cropping the edges to remove black bars</string>
     <string name="chip_custom">Custom</string>
 
     <!-- Settings: Decode -->

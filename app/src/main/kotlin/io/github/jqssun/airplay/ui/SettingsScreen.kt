@@ -44,6 +44,7 @@ fun SettingsScreen(viewModel: MainViewModel) {
     val launchOnConnect by viewModel.launchOnConnect.collectAsState()
     val maxFps by viewModel.maxFps.collectAsState()
     val overscanned by viewModel.overscanned.collectAsState()
+    val fillScreen by viewModel.fillScreen.collectAsState()
     val requirePin by viewModel.requirePin.collectAsState()
     val allowNewConn by viewModel.allowNewConn.collectAsState()
     val autoStart by viewModel.autoStart.collectAsState()
@@ -221,6 +222,13 @@ fun SettingsScreen(viewModel: MainViewModel) {
             description = stringResource(R.string.setting_overscanned_desc),
             checked = overscanned,
             onCheckedChange = { viewModel.setOverscanned(it) }
+        )
+
+        SettingSwitch(
+            title = stringResource(R.string.setting_fill_screen),
+            description = stringResource(R.string.setting_fill_screen_desc),
+            checked = fillScreen,
+            onCheckedChange = { viewModel.setFillScreen(it) }
         )
 
         SectionHeader(stringResource(R.string.section_decode))

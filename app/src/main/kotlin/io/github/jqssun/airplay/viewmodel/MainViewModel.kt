@@ -119,6 +119,9 @@ class MainViewModel @Inject constructor(app: Application) : AndroidViewModel(app
     private val _overscanned = MutableStateFlow(prefs.getBoolean(Prefs.OVERSCANNED, Prefs.DEF_OVERSCANNED))
     val overscanned: StateFlow<Boolean> = _overscanned.asStateFlow()
 
+    private val _fillScreen = MutableStateFlow(prefs.getBoolean(Prefs.FILL_SCREEN, Prefs.DEF_FILL_SCREEN))
+    val fillScreen: StateFlow<Boolean> = _fillScreen.asStateFlow()
+
     private val _requirePin = MutableStateFlow(prefs.getBoolean(Prefs.REQUIRE_PIN, Prefs.DEF_REQUIRE_PIN))
     val requirePin: StateFlow<Boolean> = _requirePin.asStateFlow()
 
@@ -267,6 +270,7 @@ class MainViewModel @Inject constructor(app: Application) : AndroidViewModel(app
     fun setResolution(v: String) { _resolution.value = v; prefs.edit().putString(Prefs.RESOLUTION, v).apply() }
     fun setMaxFps(v: Int) { _maxFps.value = v; prefs.edit().putInt(Prefs.MAX_FPS, v).apply() }
     fun setOverscanned(v: Boolean) { _overscanned.value = v; prefs.edit().putBoolean(Prefs.OVERSCANNED, v).apply() }
+    fun setFillScreen(v: Boolean) { _fillScreen.value = v; prefs.edit().putBoolean(Prefs.FILL_SCREEN, v).apply() }
     fun setRequirePin(v: Boolean) { _requirePin.value = v; prefs.edit().putBoolean(Prefs.REQUIRE_PIN, v).apply() }
     fun setAllowNewConn(v: Boolean) { _allowNewConn.value = v; prefs.edit().putBoolean(Prefs.ALLOW_NEW_CONN, v).apply() }
     fun setAudioLatencyMs(v: Int) { _audioLatencyMs.value = v; prefs.edit().putInt(Prefs.AUDIO_LATENCY_MS, v).apply() }
