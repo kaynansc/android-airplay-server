@@ -41,6 +41,7 @@ fun MirroringView(
             factory = { ctx ->
                 SurfaceView(ctx).also {
                     it.holder.addCallback(callbacks)
+                    it.keepScreenOn = true
                 }
             },
             modifier = m
